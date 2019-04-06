@@ -29,14 +29,10 @@ try {
             if (message.author.id !== Dav) return;
             let std = client.users.get(args[0])
             let sayto = args.join (" ").slice(18);
-            if(!args[0]) return message.channel.send('Give me User ID')
-            if(!sayto) return message.channel.send('Message!')
-            let embed = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .addField(`Message`, `${sayto}`)
-            .setTimestamp();
-            message.delete();
-            std.send(embed);
+            if(!args[0]) return message.channel.send('Give me user ID')
+            if(!sayto) return message.channel.send(`${prefix}dm user id message `)
+            message.channel.send(sayto);
+           client.users.get(args[0]).send(sayto);
         
             let cembed = new Discord.RichEmbed()
             .setColor('#0400ff')
