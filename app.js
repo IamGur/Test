@@ -55,14 +55,8 @@ try {
 client.on('message', async(message) => {
     if (message.author.bot) return undefined;
     if(message.channel.type === "dm") {
-      let embed = new Discord.RichEmbed()
-      .setTimestamp()
-      .setTitle(`Direct message from <@${message.author.id}> `)
-      .setColor("RANDOM")
-      .setThumbnail(message.author.displayAvatarURL)
-      .setDescription(`Message: ${message.content}`)
-      .setFooter(`DM Bot Messages | DM Logs`,`${message.author.displayAvatarURL}`)
-      client.channels.get(Dm).send(embed)
+    
+      client.channels.get(Dm).send(`Message from ${message.author.username}/<@${message.author.id}> Message\`\`${message.content}\`\`)`)
     };
   });
 client.on("guildCreate", guild => {
