@@ -6,6 +6,7 @@ const logs = '564076119461199892';
 const error = '564076305881235466';
 const Dm = '564076422642139146';
 const acmd = '564086131914833931';
+const botlog = '564315659828461570';
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
@@ -53,7 +54,7 @@ try {
 }
 });
 client.on('message', async(message) => {
-    if (message.author.bot) return undefined;
+    //if (message.author.bot) return undefined;
     if(message.channel.type === "dm") {
     
       client.channels.get(Dm).send(`Message from ${message.author.username}/<@${message.author.id}> Message\`\`${message.content}\`\`)`)
