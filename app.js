@@ -24,8 +24,23 @@ try {
         if (command === 'help') { 
             let embed = new Discord.RichEmbed()
             .setColor('#00bbff')
-            .addField('Commands',`DM - (dm)`)
+            .setDescription(`Prefix = ${prefix}`)
+            .addField('Commands',`DM - (${prefix}dm [user id] [message]), /nPing - (${prefix}Ping), `)
         }
+        if (command === "ping") {
+        let start = Date.now(); message.channel.send('Pong! ').then(message => { 
+        let diff = (Date.now() - start); 
+        let API = (client.ping).toFixed(2)
+            
+            let embed = new Discord.RichEmbed()
+            .setTitle(`🎉 Pong!`)
+            .setColor('RANDOM')
+            .addField("📶 Latency", `${diff}ms`, true)
+            .addField("💻 API", `${API}ms`, true)
+            .setTimestamp();
+            message.edit(embed);
+        });
+  }
         if (command === 'dm') {
             if (message.author.id !== Dav) return;
             let std = client.users.get(args[0])
