@@ -7,7 +7,7 @@ const error = '564076305881235466';
 const Dm = '564076422642139146';
 const acmd = '564086131914833931';
 
-client.once('ready', () => {
+client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
     client.channels.get(logs).send(`**Bot Logged in as ${client.user.tag}\, ${client.guilds.size} Servers \, ${client.users.size} Users Dav-ID:${Dav} !** `);
 });
