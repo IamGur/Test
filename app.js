@@ -78,4 +78,4 @@ client.on("guildCreate", guild => {
     .addField('Total Members', client.users.size);
     client.channels.get("564076213774057472").send(Embed)
   });
-client.login('process.env.BOTTOKEN');
+client.login(process.env.BOTTOKEN);
